@@ -1,12 +1,13 @@
 import React from "react";
 
-import { View, Button, StyleSheet, Text } from 'react-native';
+import { View, Button, StyleSheet, Text, Image } from 'react-native';
 
 class Header extends React.Component {
     render() {
         return(
-            <View style={styles.Header}>
-                <Text>ARTG</Text>
+            <View>
+                <Text style={styles.Header}>ARTG</Text>
+                <Image source={require('../assets/icon/icons8-menu-24.png')} alt="Logo" />
             </View>
         )
     }
@@ -18,5 +19,10 @@ const styles = StyleSheet.create({
         marginTop:50,
         justifyContent: 'center',
         alignItems: 'center',
-    }
+    },
+    // logo: {
+    //     marginTop:50,
+    //     justifyContent: 'right',
+    //     alignItems: 'right',
+    // }
 });

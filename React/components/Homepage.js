@@ -7,8 +7,8 @@ class Homepage extends React.Component {
     render() {
         return(
             <View>
-                <ImageBackground source={require('../assets/voitures/Bentley-Continental-GT-luxury-black-car_iphone_640x1136.jpg')}/>
-                {/*<Header/>*/}
+                {/*<ImageBackground source={require('../assets/voitures/Bentley-Continental-GT-luxury-black-car_iphone_640x1136.jpg')}/>*/}
+               <Header/>
                 {/*<View style={styles.main_content}>*/}
                 {/*    <Text style={styles.Text}>New</Text>*/}
                 {/*    <Text  style={styles.Text} >Continental GTC</Text>*/}
