@@ -16,8 +16,10 @@ export default Header
 
 const styles = StyleSheet.create({
     Header: {
+        zIndex:1,
         marginTop:50,
         alignItems: 'center',
+
     },
     Text: {
         flex:0,
