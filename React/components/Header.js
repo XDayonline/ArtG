@@ -1,13 +1,17 @@
 import React from "react";
-
+import Menu from "./Menu";
 import { View, Button, StyleSheet, Text, Image } from 'react-native';
 
 class Header extends React.Component {
+    constructor(props) {
+        super(props);
+    }
     render() {
         return(
             <View style={styles.Header}>
+                <Text style={styles.Space} ></Text>
                 <Text style={styles.Text}>ARTG</Text>
-                <Image style={styles.logo} source={require('../assets/icon/icons8-menu-24.png')} alt="Logo" />
+                <Menu/>
             </View>
         )
     }
@@ -19,13 +23,13 @@ const styles = StyleSheet.create({
         zIndex:1,
         marginTop:50,
         alignItems: 'center',
-
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+    },
+    Space: {
+        width:25
     },
     Text: {
-        flex:0,
-        justifyContent: 'center',
+
     },
-    logo: {
-        flex:0,
-    }
 });
