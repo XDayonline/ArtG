@@ -1,6 +1,5 @@
 import React from "react";
 import Header from "./Header";
-import SliderBox from "./Slider";
 import {Button, colors} from 'react-native-elements';
 import { View, TextInput, StyleSheet, Text, ImageBackground, Image } from 'react-native';
 
