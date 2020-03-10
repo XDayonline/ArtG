@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,13 +22,13 @@ Route::middleware('auth')->get('/user', function (Request $request) {
 Route::post('register', 'RegisterController@register');
 Route::post('login', 'RegisterController@login');
 
-//Route::resource('car', 'CarController');
+Route::resource('cars', 'CarController');
 
-Route::middleware('auth')->group( function () {
-    Route::resource('cars', 'CarController');
+/*Route::middleware('auth:api')->group( function () {
+    Route::resource('cars', 'API\CarController');
 //    Route::get('car', 'CarController@index');
 //    Route::get('car/{id}', 'CarController@show');
 //    Route::post('car', 'CarController@store');
 //    Route::put('car/{id}', 'CarController@update');
 //    Route::delete('car/{id}', 'CarController@destroy');
-});
+});*/

@@ -30,7 +30,7 @@ class CarController extends Controller
      */
     public function create()
     {
-        return view('cars.create');
+        //
     }
 
     /**
@@ -60,7 +60,7 @@ class CarController extends Controller
      * Display the specified resource.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\JsonResponse|\Illuminate\Http\Response
      */
     public function show($id)
     {
