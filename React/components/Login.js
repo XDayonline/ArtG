@@ -11,7 +11,7 @@ class Login extends React.Component {
     render() {
         return(
             <View style={styles.body}>
-                <Header/>
+                <Header navigation={this.props.navigation} />
                 <View style={styles.form}>
                     <View style={styles.case}>
                         <Image style={styles.logo} source={require('../assets/icon/icons8-invité-homme-24.png')} alt="menu" />
@@ -42,11 +42,7 @@ class Login extends React.Component {
                 </View>
                     <Button buttonStyle={{borderColor:'white', borderWidth:0.5, borderRadius:60, width:200, marginLeft:90, marginTop:30}} type='outline' titleStyle={{color:'white'}} title='LOG IN' onPress={() => {}}/>
             </View>
-
-
-
-
-    )
+        )
     }
 }
 
