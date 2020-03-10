@@ -21,8 +21,8 @@ class Login extends React.Component {
                                    placeholder = "Username"
                                    placeholderTextColor = "white"
                                    onChangeText = {this.handleName}/>
-                        <TouchableHighlight onPress={() => {this.clearText(this._textUSer)}}>
-                            <Image style={styles.clear} source={require('../assets/icon/icons8-effacer-24.png')} alt="menu" />
+                        <TouchableHighlight style={styles.clear} onPress={() => {this.clearText(this._textUSer)}}>
+                            <Image style={styles.deleteIcon} source={require('../assets/icon/icons8-effacer-24.png')} alt="menu" />
                         </TouchableHighlight>
                     </View>
                     <View style={styles.case}>
@@ -35,8 +35,8 @@ class Login extends React.Component {
                                    autoCapitalize = "none"
                                    secureTextEntry={true}
                                    onChangeText = {this.handleEmail}/>
-                        <TouchableHighlight onPress={() => {this.clearText(this._textInput)}}>
-                            <Image style={styles.clear} source={require('../assets/icon/icons8-effacer-24.png')} alt="menu" />
+                        <TouchableHighlight style={styles.clear} onPress={() => {this.clearText(this._textInput)}}>
+                            <Image style={styles.deleteIcon} source={require('../assets/icon/icons8-effacer-24.png')} alt="menu" />
                         </TouchableHighlight>
                     </View>
                 </View>
@@ -79,7 +79,12 @@ const styles = StyleSheet.create({
     clear: {
         width:15,
         height:15,
-        marginLeft:20,
-        alignItems:'center'
+        left:250,
+        position: 'absolute',
+        alignItems:'center',
     },
+    deleteIcon: {
+        width:15,
+        height:15
+    }
 });
