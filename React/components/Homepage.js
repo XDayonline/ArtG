@@ -7,9 +7,6 @@ import { createDrawerNavigator } from '@react-navigation/drawer';
 import { NavigationContainer } from '@react-navigation/native';
 
 
-
-
-
 class Homepage extends React.Component {
     render() {
         return(
@@ -19,7 +16,7 @@ class Homepage extends React.Component {
                     <View style={styles.main_content}>
                         <Text style={styles.Text}>New</Text>
                         <Text  style={styles.Text} >Continental GTC</Text>
-                        <Button buttonStyle={{borderColor:'white', borderWidth:2}} type='outline' titleStyle={{color:'white'}} style={styles.Btn} title='Discover' onPress= {() => navigation.navigate('Login')}/>
+                        <Button buttonStyle={{borderColor:'white', borderWidth:2}} type='outline' titleStyle={{color:'white'}} style={styles.Btn} title='Discover' onPress={{}}/>
                     </View>
                 </ImageBackground>
            </View>

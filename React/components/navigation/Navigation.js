@@ -1,70 +1,23 @@
-import {
-    DrawerContentComponentProps,
-    DrawerItem,
-    DrawerNavigationProp,
-    createDrawerNavigator,
-} from '@react-navigation/drawer';
-import React, { ReactElement } from 'react';
-import { ScrollView, StyleSheet } from 'react-native';
+// Navigation/Navigation.js
 
-import Home from '../screen/Home';
-import { useSafeArea } from 'react-native-safe-area-context';
+import { createDrawerNavigator } from '@react-navigation/drawer';
+import React, { ReactElement } from 'react';
+import Homepage from "../Homepage";
+import Login from "../Login";
+import {createAppContainer} from "react-navigation";
+import NavigationContainer from "@react-navigation/native/lib/commonjs/NavigationContainer";
+
 
 const Drawer = createDrawerNavigator();
 
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-    },
-});
-
-function CustomDrawerContent({ drawerPosition, navigation }): ReactElement {
-    const insets = useSafeArea();
-
+function MyDrawer() {
     return (
-        <ScrollView
-            contentContainerStyle={[
-                {
-                    paddingTop: insets.top + 4,
-                    paddingLeft: drawerPosition === 'left' ? insets.left : 0,
-                    paddingRight: drawerPosition === 'right' ? insets.right : 0,
-                },
-            ]}
-            style={styles.container}
-        >
-            <DrawerItem
-                label="Screen1"
-                onPress={(): void => {
-                    navigation.navigate('Home');
-                }}
-            />
-            {/*<DrawerItem*/}
-            {/*    label="Screen2"*/}
-            {/*    onPress={(): void => {*/}
-            {/*        navigation.navigate('DrawerScreen2');*/}
-            {/*    }}*/}
-            {/*/>*/}
-            <DrawerItem
-                label="Close"
-                onPress={(): void => {
-                    navigation.closeDrawer();
-                }}
-            />
-        </ScrollView>
+        <NavigationContainer>
+            <Drawer.Navigator>
+                <Drawer.Screen name="Home" component={Homepage}/>
+                <Drawer.Screen name="Login" component={Login}/>
+            </Drawer.Navigator>
+        </NavigationContainer>
     );
 }
-
-function Navigator(): ReactElement {
-    return (
-        <Drawer.Navigator
-            drawerContent={(props: DrawerContentComponentProps): ReactElement => (
-                <CustomDrawerContent {...props} />
-            )}
-        >
-            <Drawer.Screen name="Home" component={Home} />
-            {/*<Drawer.Screen name="DrawerScreen2" component={DrawerScreen2} />*/}
-        </Drawer.Navigator>
-    );
-}
-
-export default Navigator;
+export default MyDrawer
