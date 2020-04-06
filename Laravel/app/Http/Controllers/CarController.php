@@ -19,7 +19,6 @@ class CarController extends Controller
     public function index()
     {
         $cars = Car::all();
-
         return $this->sendResponse(CarResource::collection($cars), 'Cars retrieved successfully.');
     }
 
@@ -42,17 +41,13 @@ class CarController extends Controller
     public function store(Request $request)
     {
         $input = $request->all();
-
         $validator = Validator::make($input, [
             'marque' => 'required',
         ]);
-
         if($validator->fails()){
             return $this->sendError('Validation Error.', $validator->errors());
         }
-
         $car = Car::create($input);
-
         return $this->sendResponse(new CarResource($car), 'Car created successfully.');
     }
 
