@@ -8,8 +8,8 @@ import StackNavigation from "./components/navigation/StackNavigation";
 
 export default function App() {
   return (
-      // <StackNavigation/>
-      <DrawerNavigation/>
+      <StackNavigation/>
+      // <DrawerNavigation/>
   );
 }
 

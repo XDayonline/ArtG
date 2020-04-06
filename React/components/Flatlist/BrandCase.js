@@ -30,7 +30,13 @@ function Item({ title, car, navigation}) {
     );
 }
 
+
+
 export default function App() {
+    _displayDetailForFilm = (idFilm) => {
+        console.log("Display film with id " + idFilm)
+    };
+
     return (
         <SafeAreaView style={styles.container}>
             <FlatList
@@ -40,6 +46,8 @@ export default function App() {
             />
         </SafeAreaView>
     );
+
+
 }
 
 const styles = StyleSheet.create({
