@@ -8,13 +8,15 @@ import BrandCatalog from "../Flatlist/BrandCatalog";
 import NavigationContainer from "@react-navigation/native/lib/commonjs/NavigationContainer";
 import ItemCatalog from "../Flatlist/ItemCatalog";
 import Cart from "../Flatlist/Cart";
+import StackNavigation from "../navigation/StackNavigation";
+
 
 
 const Drawer = createDrawerNavigator();
 
 function MyDrawer() {
     return (
-        <NavigationContainer>
+
             <Drawer.Navigator
             drawerPosition="right"
             drawerStyle={{
@@ -30,7 +32,7 @@ function MyDrawer() {
                 <Drawer.Screen name="Item" component={ItemCatalog}/>
                 <Drawer.Screen name="Cart" component={Cart}/>
             </Drawer.Navigator>
-        </NavigationContainer>
+
     );
 }
 export default MyDrawer
