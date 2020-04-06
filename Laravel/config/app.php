@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'ArtG'),
+    'name' => env('APP_NAME', 'Laravel'),
 
     /*
     |--------------------------------------------------------------------------
@@ -174,7 +174,6 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-        //Fruitcake\Cors\ServiceProvider::class,
 
     ],
 
@@ -228,7 +227,5 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
 
     ],
-
-    'paths' => ['api/*'],
 
 ];
