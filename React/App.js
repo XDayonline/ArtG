@@ -1,19 +1,19 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import Homepage from "./components/Homepage";
+import DrawerNavigation from "./components/navigation/DrawerNavigation";
+import Login from "./components/Login";
+import { ScrollView } from 'react-native';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>ArtG</Text>
-    </View>
+        <DrawerNavigation/>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+
+
+
+
+
+
+
