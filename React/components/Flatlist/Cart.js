@@ -1,15 +1,12 @@
 import React from "react";
 import {default as styled, StyleSheet, Text, View, Image, ScrollView, FlatList} from "react-native";
 import Header from "../Header";
-import ItemCase from "./ItemCase";
-import Cartitem from "./Cartitem";
 
 class Cart extends React.Component {
     render() {
         return(
             <View style={styles.body}>
                 <Header navigation={this.props.navigation}/>
-                <Cartitem/>
             </View>
         )
     }

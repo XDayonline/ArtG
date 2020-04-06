@@ -6,7 +6,7 @@ import Homepage from "../Homepage";
 import Login from "../Login";
 import BrandCatalog from "../Flatlist/BrandCatalog";
 import NavigationContainer from "@react-navigation/native/lib/commonjs/NavigationContainer";
-import ItemCatalog from "../Flatlist/ItemCatalog";
+import CarsCatalog from "../Flatlist/CarsCatalog";
 import Cart from "../Flatlist/Cart";
 import StackNavigation from "../navigation/StackNavigation";
 
@@ -29,7 +29,7 @@ function MyDrawer() {
                 <Drawer.Screen name="Home" component={Homepage} options={{ drawerLabel: 'Home' , color:'white'}}/>
                 <Drawer.Screen name="Login" component={Login}/>
                 <Drawer.Screen name="Catalog" component={BrandCatalog}/>
-                <Drawer.Screen name="Item" component={ItemCatalog}/>
+                <Drawer.Screen name="Item" component={CarsCatalog}/>
                 <Drawer.Screen name="Cart" component={Cart}/>
             </Drawer.Navigator>
 

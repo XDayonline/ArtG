@@ -1,19 +1,34 @@
 import React from "react";
-import {default as styled, StyleSheet, Text, View, Image, ScrollView, FlatList} from "react-native";
+import {
+    StyleSheet,
+    View,
+    FlatList,
+} from "react-native";
 import Header from "../Header";
-import ItemCase from "./ItemCase";
+import cars from "./CarsData";
+import CarsItem from "./CarsItem";
 
-class ItemCatalog extends React.Component {
+class CarsCatalog extends React.Component {
+    _displayDetailCars = (idCars) => {
+        console.log("Cars " + idCars)
+    };
     render() {
         return(
             <View style={styles.body}>
                 <Header navigation={this.props.navigation}/>
-                <ItemCase/>
+                <FlatList
+                    data={cars}
+                    renderItem={({ item }) => <CarsItem cars={item} displayDetailCars={this._displayDetailCars()} />}
+                    keyExtractor={item => item.id}
+                />
             </View>
         )
     }
 }
-export default ItemCatalog;
+export default CarsCatalog;
+
+
+
 
 
 const styles = StyleSheet.create({
