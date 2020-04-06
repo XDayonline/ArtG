@@ -1,7 +1,7 @@
 import React from 'react';
 import {SafeAreaView, View, FlatList, StyleSheet, Text, Image} from 'react-native';
 import {Button} from "react-native-elements";
-import Navigation from "./components/navigation/Navigation";
+
 
 const DATA = [
     {
@@ -19,12 +19,12 @@ const DATA = [
     },
 ];
 
-function Item({ title, car }) {
+function Item({ title, car, navigation}) {
     return (
         <View style={styles.item}>
-            <Image source={car} style={{width:400, height: 400}} />
+            <Image source={require('../assets/cars/vantage-mobile-navigation.png')} style={{width:400, height: 400}} />
             <Text style={styles.title}>{title}</Text>
-            <Button buttonStyle={{borderColor:'white', borderWidth:2}} type='outline' titleStyle={{color:'white'}} style={styles.Btn} title='Discover' onclick={() => {}} />
+            <Button buttonStyle={{borderColor:'white', borderWidth:2}} type='outline' titleStyle={{color:'white'}} style={styles.Btn} title='Add to cart' onclick={() => {}} />
         </View>
     );
 }
