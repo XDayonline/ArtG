@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="68b5829a-9c6d-4cbc-b699-75da547b13bb" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-    </list>
+    <list default="true" id="c6e211ae-13b7-4b94-8237-8d31ba876ecf" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -146,6 +144,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../React" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="ServiceViewManager">
@@ -169,8 +168,13 @@
       <created>1586164929251</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1586164929251</updated>
-      <workItem from="1586164933499" duration="50000" />
+      <updated>1580305231366</updated>
+      <workItem from="1580305232835" duration="9960000" />
+      <workItem from="1581321812980" duration="19883000" />
+      <workItem from="1581410210075" duration="17619000" />
+      <workItem from="1583741289086" duration="19772000" />
+      <workItem from="1583827706126" duration="19705000" />
+      <workItem from="1586156587790" duration="1713000" />
     </task>
     <servers />
   </component>
