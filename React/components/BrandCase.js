@@ -2,11 +2,10 @@ import React from 'react';
 import {SafeAreaView, View, FlatList, StyleSheet, Text, Image} from 'react-native';
 import {Button} from "react-native-elements";
 
-
 const DATA = [
     {
         id: 'case-1',
-        title: 'First Item',
+        title: 'First Brand',
         car: require('../assets/cars/vantage-mobile-navigation.png'),
     },
     {
@@ -23,7 +22,7 @@ function Item({ title, car, navigation}) {
     return (
         <View style={styles.item}>
             <Text style={styles.title}>{title}</Text>
-            <Button buttonStyle={{borderColor:'white', borderWidth:2}} type='outline' titleStyle={{color:'white'}} style={styles.Btn} title='Discover' onclick={() => navigation.navigate('Home')} />
+            <Button buttonStyle={{borderColor:'white', borderWidth:2}} type='outline' titleStyle={{color:'white'}} style={styles.Btn} title='Discover' onclick={() => {}} />
             <Image source={require('../assets/cars/vantage-mobile-navigation.png')} style={{width:400, height: 400}} />
         </View>
     );

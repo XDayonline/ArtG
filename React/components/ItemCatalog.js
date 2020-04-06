@@ -1,14 +1,14 @@
 import React from "react";
 import {default as styled, StyleSheet, Text, View, Image, ScrollView, FlatList} from "react-native";
 import Header from "./Header";
-import Case from "./BrandCase";
+import ItemCase from "./ItemCase";
 
 class ItemCatalog extends React.Component {
     render() {
         return(
             <View style={styles.body}>
                 <Header navigation={this.props.navigation}/>
-                <Case/>
+                <ItemCase/>
             </View>
         )
     }
