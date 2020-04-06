@@ -1,19 +1,20 @@
 import React from "react";
 import {default as styled, StyleSheet, Text, View, Image, ScrollView, FlatList} from "react-native";
-import Header from "./Header";
+import Header from "../Header";
 import ItemCase from "./ItemCase";
+import Cartitem from "./Cartitem";
 
-class ItemCatalog extends React.Component {
+class Cart extends React.Component {
     render() {
         return(
             <View style={styles.body}>
                 <Header navigation={this.props.navigation}/>
-                <ItemCase/>
+                <Cartitem/>
             </View>
         )
     }
 }
-export default ItemCatalog;
+export default Cart;
 
 
 const styles = StyleSheet.create({

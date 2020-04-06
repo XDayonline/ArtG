@@ -1,19 +1,19 @@
 import React from "react";
 import {default as styled, StyleSheet, Text, View, Image, ScrollView, FlatList} from "react-native";
-import Header from "./Header";
-import BrandCase from "./BrandCase";
+import Header from "../Header";
+import ItemCase from "./ItemCase";
 
-class BrandCatalog extends React.Component {
+class ItemCatalog extends React.Component {
     render() {
         return(
             <View style={styles.body}>
                 <Header navigation={this.props.navigation}/>
-                <BrandCase/>
+                <ItemCase/>
             </View>
         )
     }
 }
-export default BrandCatalog;
+export default ItemCatalog;
 
 
 const styles = StyleSheet.create({
@@ -27,6 +27,7 @@ const styles = StyleSheet.create({
         zIndex:1
     },
     Text : {
+        // fontFamily: 'open-sans-bold',
         padding:10,
         fontSize: 30,
         color:'white',
