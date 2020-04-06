@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,19 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
+
+Route::middleware('auth')->get('/user', function (Request $request) {
     return $request->user();
+});
+
+Route::post('register', 'RegisterController@register');
+Route::post('login', 'RegisterController@login');
+
+Route::middleware('auth:api')->group( function () {
+    Route::apiResource('cars', 'CarController');
+//    Route::get('car', 'CarController@index');
+//    Route::get('car/{id}', 'CarController@show');
+//    Route::post('car', 'CarController@store');
+//    Route::put('car/{id}', 'CarController@update');
+//    Route::delete('car/{id}', 'CarController@destroy');
 });
