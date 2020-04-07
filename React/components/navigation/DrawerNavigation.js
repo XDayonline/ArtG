@@ -18,6 +18,7 @@ function MyDrawer() {
     return (
         <NavigationContainer>
             <Drawer.Navigator
+            initialRouteName="Home"
             drawerPosition="right"
             drawerStyle={{
                 // backgroundColor: 'black',
@@ -26,11 +27,11 @@ function MyDrawer() {
                 activeTintColor: '#e91e63',
                 drawerLabel: { color: 'white' },
             }}>
-                <Drawer.Screen name=" " component={StackNavigation}/>
+                <Drawer.Screen name="Back" component={StackNavigation}/>
                 <Drawer.Screen name="Home" component={Homepage} options={{ drawerLabel: 'Home' , color:'white'}}/>
                 <Drawer.Screen name="Login" component={Login}/>
-                <Drawer.Screen name="Catalog" component={BrandCatalog}/>
-                <Drawer.Screen name="Item" component={CarsCatalog}/>
+                <Drawer.Screen name="Brand" component={BrandCatalog}/>
+                <Drawer.Screen name="Cars" component={CarsCatalog}/>
                 <Drawer.Screen name="Cart" component={Cart}/>
             </Drawer.Navigator>
         </NavigationContainer>

@@ -13,7 +13,7 @@ class Homepage extends React.Component {
                     <View style={styles.main_content}>
                         <Text style={styles.Text}>New</Text>
                         <Text  style={styles.Text} >Continental GTC</Text>
-                        <Button buttonStyle={{borderColor:'white', borderWidth:2}} type='outline' titleStyle={{color:'white'}} style={styles.Btn} title='Discover' />
+                        <Button buttonStyle={{borderColor:'white', borderWidth:2}} type='outline' titleStyle={{color:'white'}} style={styles.Btn} title='Discover' onPress={() => {}} />
                     </View>
                 </ImageBackground>
            </View>

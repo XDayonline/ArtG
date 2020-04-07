@@ -3,6 +3,7 @@ import {
     StyleSheet,
     View,
     FlatList,
+    Text
 } from "react-native";
 import Header from "../Header";
 import cars from "./CarsData";
@@ -14,9 +15,12 @@ class CarsCatalog extends React.Component {
         console.log("Cars " + idCars)
     };
     render() {
+        const idBrand = this.props.navigation.idBrand;
+        console.log(idBrand );
         return(
             <View style={styles.body}>
                 <Header navigation={this.props.navigation}/>
+                <Text>{idBrand} Id de la marque</Text>
                 <FlatList
                     data={cars}
                     renderItem={({ item }) => <CarsItem cars={item} displayDetailCars={this._displayDetailCars} />}
