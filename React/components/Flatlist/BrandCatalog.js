@@ -3,37 +3,91 @@ import {default as styled, StyleSheet, Text, View, Image, ScrollView, FlatList, 
 import Header from "../Header";
 import BrandItem from "./BrandItem";
 import brand from "./BrandData";
-import { getCarsfromAPi } from "../../API/ARTGApi";
+import {getCarsfromAPi} from "../../API/ARTGApi";
 import {Button} from "react-native-elements";
 
 class BrandCatalog extends React.Component {
-    _loadBrand(){
-        getCarsfromAPi().then(data => console.log(data))
-    }
-    constructor(props){
+    constructor(props) {
         super(props);
-        this._brand= []
+        this._brand = [];
+        this.state = {
+            data: [],
+            isLoaded: false,
+        }
     };
+
+    state = {
+        data: []
+    };
+
+    componentDidMount() {
+        // this.fetchData();
+        fetch('https://artgback.herokuapp.com/api/cars', {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': 'Bearer ' + 'eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiODhmNDQwMDBhMmRhOGI2ZmJlZjNjOWY5NjZlZmVjYTQxNjQxOWNiMWM0MWJlYWNiYTgxMjU3YjNkZGFlOWM4NDAwMDk1ZTkxM2UzYTljMmIiLCJpYXQiOjE1ODYyNjY0NTgsIm5iZiI6MTU4NjI2NjQ1OCwiZXhwIjoxNjE3ODAyNDU4LCJzdWIiOiI3Iiwic2NvcGVzIjpbXX0.S0SuK5xd5oG3utBdCCXUaCy9cLN80ZtGkdu5QvrHs8nOrjIQ61b4GHiKN97kyDX_gxiCQvLfWJAtWHG47nlzXFcDlUgX6pI9A5IBClVEzD2frJYpNH0XtoEPuEzN_J8KWF2Bkue-0widVO8h8g3wn_V7wG-wLPbFRIhIFq5_EhYQhRHfqAE2QgbU9flkCva-OhKsIoHN1gcWjAkAdLGUnOKoOE-34EsIIGwBXXByw5wXtTin1rL-lc36-2TREMozOTMAooqnttsUNmuPKF0aFFOW8bxX5bXTuV4jGBHYsxTedqwRxxZjjjrty-1XVqbV0eDnc9cIk2ZeyAmrZlT1O2FIas6YuPgTnV5fPA-KTvpVw_xcjAE3-K99eHMJgVKrpnDFza1Oe8AbXjiJkMLqd-ZvZzQMp4eML-PSRRrADCqSf04lkP-nK_xSyai64aUonQmCMOoPV9DUCqtF_Vu534kLrFfEF6FL2dQThDAxKK4JT8ui6N2BtYFJ2x94VC35jRswcsG--3C_qEpCZjv07fNE4rWEjRIJqO2pZgcXl_Zjnb2IQ5NCXlkiHrTSwMOEmdqL0tHDOSZ5YCBmVHNbnK9jaPVewAUwxS75C0QHtZraeoH0gNbXcboBxCjLxFj7Dvb7sATY-DM9v5958lJ6etl07Eopw2bYTPZlbDW074s'
+            },
+        })
+            .then(res => res.json())
+            .then(json => {
+                this.setState({
+                    isLoaded: true,
+                    data: json,
+                })
+            })
+    }
+
     _displayDetailBrand = (idBrand) => {
         console.log("Brand " + idBrand);
         this.props.navigation.navigate("Cars", {idBrand: idBrand});
     };
+
     render() {
-        // console.log(this._loadBrand() + " liste json");
-        return(
+        let {isLoaded, data} = this.state;
+
+        if (!isLoaded) {
+            return (
+                <View>
+                    <Text>Loading...</Text>
+                </View>
+            )
+        } else {
+            return (
+
+                <View style={styles.body}>
+                    <Header navigation={this.props.navigation}/>
+                    <Button buttonStyle={{borderColor: 'white', borderWidth: 2}} type='outline'
+                            titleStyle={{color: 'white'}} style={styles.Btn} title='Discover'
+                            onPress={() => this._loadBrand()}/>
+                    <FlatList
+                        data={this.state.data}
+                        renderItem={({item}) => <Text>
+                            {`${item.marque}`}
+                        </Text>}
+                        keyExtractor={(item) => item.id.toString()}
+                    />
+                </View>
+            )
+        }
+        return (
             <View style={styles.body}>
                 <Header navigation={this.props.navigation}/>
-                <Button buttonStyle={{borderColor:'white', borderWidth:2}} type='outline' titleStyle={{color:'white'}} style={styles.Btn} title='Discover' onPress={() => this._loadBrand()} />
+                <Button buttonStyle={{borderColor: 'white', borderWidth: 2}} type='outline'
+                        titleStyle={{color: 'white'}} style={styles.Btn} title='Discover'
+                        onPress={() => this._loadBrand()}/>
                 <FlatList
-                    data={brand}
-                    // data={this._brand}
-                    renderItem={({ item }) => <BrandItem brand={item} displayDetailBrand={this._displayDetailBrand}/>}
+                    data={this.state.data}
+                    renderItem={({item}) => <Text>
+                        {`${item.marque}`}
+                    </Text>}
                     keyExtractor={(item) => item.id.toString()}
                 />
             </View>
         )
     }
 }
+
 export default BrandCatalog;
 
 
@@ -42,15 +96,15 @@ const styles = StyleSheet.create({
         flex: 1
     },
     main_content: {
-        marginTop:150,
-        justifyContent:'center',
+        marginTop: 150,
+        justifyContent: 'center',
         alignItems: 'center',
-        zIndex:1
+        zIndex: 1
     },
-    Text : {
-        padding:10,
+    Text: {
+        padding: 10,
         fontSize: 30,
-        color:'white',
+        color: 'white',
     },
     Btn: {
         marginTop: 30,
