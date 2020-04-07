@@ -11,17 +11,17 @@ const Stack = createStackNavigator();
 
 function MyDrawer() {
     return (
-        <NavigationContainer>
+        // <NavigationContainer>
             <Stack.Navigator
                 screenOptions={{
                     headerShown: false
                 }}>
-                <Stack.Screen name=" " component={DrawerNavigation} />
+                {/*<Stack.Screen name=" " component={DrawerNavigation} />*/}
                 <Stack.Screen name="Brand" component={BrandCatalog} />
                 <Stack.Screen name="Cars" component={CarsCatalog} />
                 <Stack.Screen name="Cart" component={Cart} />
             </Stack.Navigator>
-        </NavigationContainer>
+        // </NavigationContainer>
     );
 }
 export default MyDrawer
