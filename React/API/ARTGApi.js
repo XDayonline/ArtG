@@ -2,7 +2,7 @@ export function getCarsfromAPi(){
     // fetch('https://jsonplaceholder.typicode.com/todos/1')
     //     .then(response => response.json())
     //     .then(json => console.log(json))
-    const url= 'https://artgback.herokuapp.com/api/cars' + API_TOKEN;
+    const url= 'https://artgback.herokuapp.com/api/cars';
     return fetch(url)
         .then((response) => response.json)
         .then(json => console.log(json))
