@@ -1,5 +1,6 @@
 import React from "react";
 import {Image, Text, TouchableOpacity, View, StyleSheet} from "react-native";
+import {Button} from "react-native-elements";
 
 
 class CarsItem extends React.Component {
@@ -7,9 +8,8 @@ class CarsItem extends React.Component {
         const { cars, displayDetailCars } = this.props;
         return (
             <View style={styles.item}>
-                <TouchableOpacity onPress={() => displayDetailCars(cars.id)}>
-                    <Text style={styles.title}>{cars.title}</Text>
-                </TouchableOpacity>
+                <Text style={styles.title}>{cars.title}</Text>
+                <Button buttonStyle={{borderColor:'white', borderWidth:2}} type='outline' titleStyle={{color:'white'}} style={styles.Btn} title='Discover' onPress={() => displayDetailCars(cars.id)} />
                 <Image source={cars.picture} style={{width:400, height: 400}} />
                 <Text style={styles.text}>A partir de {cars.price}</Text>
             </View>

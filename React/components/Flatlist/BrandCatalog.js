@@ -6,7 +6,8 @@ import brand from "./BrandData";
 
 class BrandCatalog extends React.Component {
     _displayDetailBrand = (idBrand) => {
-        console.log("Brand " + idBrand)
+        console.log("Brand " + idBrand);
+        this.props.navigation.navigate("Cars");
     };
     render() {
         return(
@@ -14,8 +15,8 @@ class BrandCatalog extends React.Component {
                 <Header navigation={this.props.navigation}/>
                 <FlatList
                     data={brand}
-                    renderItem={({ item }) => <BrandItem brand={item} displayDetailBrand={this._displayDetailBrand()}/>}
-                    keyExtractor={item => item.id}
+                    renderItem={({ item }) => <BrandItem brand={item} displayDetailBrand={this._displayDetailBrand}/>}
+                    keyExtractor={(item) => item.id.toString()}
                 />
             </View>
         )

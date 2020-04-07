@@ -10,6 +10,7 @@ import CarsItem from "./CarsItem";
 
 class CarsCatalog extends React.Component {
     _displayDetailCars = (idCars) => {
+        this.props.navigation.navigate("Cart");
         console.log("Cars " + idCars)
     };
     render() {
@@ -18,8 +19,8 @@ class CarsCatalog extends React.Component {
                 <Header navigation={this.props.navigation}/>
                 <FlatList
                     data={cars}
-                    renderItem={({ item }) => <CarsItem cars={item} displayDetailCars={this._displayDetailCars()} />}
-                    keyExtractor={item => item.id}
+                    renderItem={({ item }) => <CarsItem cars={item} displayDetailCars={this._displayDetailCars} />}
+                    keyExtractor={(item) => item.id.toString()}
                 />
             </View>
         )
