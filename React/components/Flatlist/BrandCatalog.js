@@ -2,8 +2,6 @@ import React from "react";
 import {default as styled, StyleSheet, Text, View, Image, ScrollView, FlatList, SafeAreaView} from "react-native";
 import Header from "../Header";
 import BrandItem from "./BrandItem";
-import brand from "./BrandData";
-import {getCarsfromAPi} from "../../API/ARTGApi";
 import {Button} from "react-native-elements";
 
 class BrandCatalog extends React.Component {
@@ -39,8 +37,7 @@ class BrandCatalog extends React.Component {
     }
 
     _displayDetailBrand = (idBrand) => {
-        console.log("Brand " + idBrand);
-        this.props.navigation.navigate("Cars", {idBrand: idBrand});
+        this.props.navigation.navigate("Cars", {idBrand: this.state.data.data[idBrand]});
     };
 
     render() {
@@ -54,37 +51,15 @@ class BrandCatalog extends React.Component {
             )
         } else {
             return (
-
                 <View style={styles.body}>
                     <Header navigation={this.props.navigation}/>
-                    <Button buttonStyle={{borderColor: 'white', borderWidth: 2}} type='outline'
-                            titleStyle={{color: 'white'}} style={styles.Btn} title='Discover'
-                            onPress={() => this._loadBrand()}/>
                     <FlatList
-                        data={this.state.data}
-                        renderItem={({item}) => <Text>
-                            {`${item.marque}`}
-                        </Text>}
-                        keyExtractor={(item) => item.id.toString()}
+                        data={this.state.data.data}
+                        renderItem={({item}) => <BrandItem brand={item} displayDetailBrand={this._displayDetailBrand}/>}
                     />
                 </View>
             )
         }
-        return (
-            <View style={styles.body}>
-                <Header navigation={this.props.navigation}/>
-                <Button buttonStyle={{borderColor: 'white', borderWidth: 2}} type='outline'
-                        titleStyle={{color: 'white'}} style={styles.Btn} title='Discover'
-                        onPress={() => this._loadBrand()}/>
-                <FlatList
-                    data={this.state.data}
-                    renderItem={({item}) => <Text>
-                        {`${item.marque}`}
-                    </Text>}
-                    keyExtractor={(item) => item.id.toString()}
-                />
-            </View>
-        )
     }
 }
 

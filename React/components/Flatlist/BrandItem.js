@@ -7,7 +7,7 @@ class BrandItem extends React.Component {
         const { brand, displayDetailBrand } = this.props;
         return (
             <View style={styles.item}>
-                <Text style={styles.title}>{brand.title}</Text>
+                <Text style={styles.title}>{brand.marque}</Text>
                 <Button buttonStyle={{borderColor:'white', borderWidth:2}} type='outline' titleStyle={{color:'white'}} style={styles.Btn} title='Discover' onPress={() => displayDetailBrand(brand.id)} />
                 <Image source={brand.picture} style={{width:400, height: 400}} />
             </View>

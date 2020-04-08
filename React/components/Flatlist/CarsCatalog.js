@@ -16,7 +16,6 @@ class CarsCatalog extends React.Component {
     };
     render() {
         const idBrand = this.props.navigation.idBrand;
-        console.log(idBrand );
         return(
             <View style={styles.body}>
                 <Header navigation={this.props.navigation}/>
