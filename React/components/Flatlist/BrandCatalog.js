@@ -19,12 +19,13 @@ class BrandCatalog extends React.Component {
     };
 
     componentDidMount() {
-        // this.fetchData();
+        // var TOKEN = await AsyncStorage.getItem(STORAGE_KEY);
         fetch('https://artgback.herokuapp.com/api/cars', {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': 'Bearer ' + 'eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiODhmNDQwMDBhMmRhOGI2ZmJlZjNjOWY5NjZlZmVjYTQxNjQxOWNiMWM0MWJlYWNiYTgxMjU3YjNkZGFlOWM4NDAwMDk1ZTkxM2UzYTljMmIiLCJpYXQiOjE1ODYyNjY0NTgsIm5iZiI6MTU4NjI2NjQ1OCwiZXhwIjoxNjE3ODAyNDU4LCJzdWIiOiI3Iiwic2NvcGVzIjpbXX0.S0SuK5xd5oG3utBdCCXUaCy9cLN80ZtGkdu5QvrHs8nOrjIQ61b4GHiKN97kyDX_gxiCQvLfWJAtWHG47nlzXFcDlUgX6pI9A5IBClVEzD2frJYpNH0XtoEPuEzN_J8KWF2Bkue-0widVO8h8g3wn_V7wG-wLPbFRIhIFq5_EhYQhRHfqAE2QgbU9flkCva-OhKsIoHN1gcWjAkAdLGUnOKoOE-34EsIIGwBXXByw5wXtTin1rL-lc36-2TREMozOTMAooqnttsUNmuPKF0aFFOW8bxX5bXTuV4jGBHYsxTedqwRxxZjjjrty-1XVqbV0eDnc9cIk2ZeyAmrZlT1O2FIas6YuPgTnV5fPA-KTvpVw_xcjAE3-K99eHMJgVKrpnDFza1Oe8AbXjiJkMLqd-ZvZzQMp4eML-PSRRrADCqSf04lkP-nK_xSyai64aUonQmCMOoPV9DUCqtF_Vu534kLrFfEF6FL2dQThDAxKK4JT8ui6N2BtYFJ2x94VC35jRswcsG--3C_qEpCZjv07fNE4rWEjRIJqO2pZgcXl_Zjnb2IQ5NCXlkiHrTSwMOEmdqL0tHDOSZ5YCBmVHNbnK9jaPVewAUwxS75C0QHtZraeoH0gNbXcboBxCjLxFj7Dvb7sATY-DM9v5958lJ6etl07Eopw2bYTPZlbDW074s'
+                // 'Authorization' : 'Bearer '+ TOKEN,
+             'Authorization': 'Bearer ' + 'eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiNThiN2FhZWE4OTA3ZWZjODkyMjFjYWEzNjYyNWVjNDc1ODJmNGFlZjgwM2VkNjEwNmEyOWNiZjM3Y2U0YTIwOTlmZmU1ZjQ0Y2I2YzEzMTIiLCJpYXQiOjE1ODY0NTY3MDAsIm5iZiI6MTU4NjQ1NjcwMCwiZXhwIjoxNjE3OTkyNzAwLCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.L5GPC9YwVoO0VoxdE6YbCegNnejz-FgtVjHlmXGssz4RDwE1tllhioy-yFFqvu3g4DqKVtA6sbYrp6sdm1qQuq8jkAT3wvmVqWUvuG3XDaLsWatwPln50wFDFPToDPGc1UNoSAZjA0ivbr0rICNYDHOF9I5361FYabiYLin7gtwwkW4y7HezfVLImUlMBkFC_2MZPTMn_MZf059LeEuy1zbOW4IXvNGDkLnlhAR5aYObZ7_98dU1ZYaBJA9mSNNv2Cl0jOKydPE35OKo6AOhJb9afaF36PDA8FQMRUTG_cuSfdlKjlD1RDccSrbdHb7hirjQNrnLndaT3VjOiltuwqJOlN3o_Z87hhZ3VxWdwQw-jloBO0Jsko0w0qTWVvr_rS2NhUlBGqBs7hV6FpBOguGmBbucqGXFMzTf8DZW4CiU4K0paYiaBKhsYsqe_XuUNkUtFV63krT8lVRADFBRb-toIWqH4sy5qWlsWowhkFgY6IV9L9bRMXKAihAYd_1EKWCK1nkZGA_esS1H5JuqSOJhHIX8RqQa_Y7yDRYNx00K3N1g7iWnLstGLDZA5GXCRawawwH763Uqjl1Mn7nsL2mV0Evyeo34gPpBMr6REHsjsgPge68Txe2sbCGAA8QdmxsfOye9OHLcIe91HIGCnGdnBXU4n9XMU7dbj0kkj88'
             },
         })
             .then(res => res.json())
@@ -37,7 +38,7 @@ class BrandCatalog extends React.Component {
     }
 
     _displayDetailBrand = (idBrand) => {
-        this.props.navigation.navigate("Cars", {idBrand: this.state.data.data[idBrand]});
+        this.props.navigation.navigate("Cars", {idBrand: this.state.data.data[1].id});
     };
 
     render() {
@@ -45,7 +46,8 @@ class BrandCatalog extends React.Component {
 
         if (!isLoaded) {
             return (
-                <View>
+                <View style={styles.body}>
+                    <Header navigation={this.props.navigation}/>
                     <Text>Loading...</Text>
                 </View>
             )

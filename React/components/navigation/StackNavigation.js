@@ -1,6 +1,4 @@
-import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import DrawerNavigation from "../navigation/DrawerNavigation";
 import React from "react";
 import Cart from "../Flatlist/Cart";
 import BrandCatalog from "../Flatlist/BrandCatalog";
