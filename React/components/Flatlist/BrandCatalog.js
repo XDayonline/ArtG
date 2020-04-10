@@ -50,7 +50,6 @@ class BrandCatalog extends React.Component {
 
     _displayDetailBrand = (idBrand) => {
         this.props.navigation.navigate("Cars", {idBrand: this.state.data.data[idBrand].id});
-        // this.props.navigation.navigate("Cars", {id: data.data.id});
     };
 
     render() {

@@ -19,7 +19,7 @@ class CarsCatalog extends React.Component {
     };
 
     componentDidMount = async () => {
-        const {params} = this.props.navigation.state;
+        // const {params} = this.props.navigation.state;
         fetch('https://artgback.herokuapp.com/api/cars/1' , {
             method: 'GET',
             headers: {
@@ -54,15 +54,15 @@ class CarsCatalog extends React.Component {
                 </View>
             )
         } else {
+            console.log("ID MARQUE : " + data.data.id)
             return (
                 <View style={styles.body}>
                     <Header navigation={this.props.navigation}/>
-                    <Text style={{color: 'white'}}>{data.data.id} Id de la marque</Text>
-                    {/*<FlatList*/}
-                    {/*    data={cars}*/}
-                    {/*    renderItem={({item}) => <CarsItem cars={item} displayDetailCars={this._displayDetailCars}/>}*/}
-                    {/*    keyExtractor={(item) => item.id.toString()}*/}
-                    {/*/>*/}
+                    <FlatList
+                        data={cars}
+                        renderItem={({item}) => <CarsItem cars={item} displayDetailCars={this._displayDetailCars}/>}
+                        keyExtractor={(item) => item.id.toString()}
+                    />
                 </View>
             )
         }
