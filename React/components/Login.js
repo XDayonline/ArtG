@@ -1,12 +1,14 @@
 import React from "react";
-import Header from "./Header";
 import {Image, StyleSheet, Text, View, TextInput, TouchableHighlight, Alert, AsyncStorage} from "react-native";
 import {Button} from "react-native-elements";
-import Homepage from "./Homepage";
 
 class Login extends React.Component {
     clearText(input){
         input.setNativeProps({ text: '' });
+    }
+    cleanLog(){
+        this.clearText(this._textUSer)
+        this.clearText(this._textPass)
     }
     constructor(props){
         super(props);
@@ -30,18 +32,23 @@ class Login extends React.Component {
         })
         const data = await result.json();
         if(data.success === true){
-            Alert.alert( 'ok','you are connected')
+            Alert.alert( 'Login','you are connected')
             await AsyncStorage.setItem("name",data.data.name)
             await AsyncStorage.setItem("token", data.data.token)
             this.props.navigation.navigate("Home")
+            this.cleanLog()
         }else{
             Alert.alert( 'Error','not connected')
         }
-    };
+    }
     render() {
         return(
             <View style={styles.body}>
-                <Header navigation={this.props.navigation} />
+                <View style={styles.paddingTitle}>
+                    <Text style={styles.Space}/>
+                    <Text style={styles.Text}>ARTG</Text>
+                    <Text style={styles.Space}/>
+                </View>
                 <View style={styles.form}>
                     <View style={styles.case}>
                         <Image style={styles.logo} source={require('../assets/icon/icons8-invité-homme-24.png')} alt="menu" />
@@ -58,32 +65,36 @@ class Login extends React.Component {
                     <View style={styles.case}>
                         <Image style={styles.logo} source={require('../assets/icon/icons8-cadenas-24.png')} alt="menu" />
                         <TextInput style = {styles.inputText}
-                                   ref={element => this._textInput = element}
+                                   ref={element => this._textPass = element}
                                    underlineColorAndroid = "transparent"
                                    placeholder = "Password"
                                    placeholderTextColor = 'white'
-                                   autoCapitalize = "none"s
+                                   autoCapitalize = "none"
                                    secureTextEntry={true}
                                    onChangeText = {(text) => this.setState({password:text})}/>
-                        <TouchableHighlight style={styles.clear} onPress={() => {this.clearText(this._textInput)}}>
+                        <TouchableHighlight style={styles.clear} onPress={() => {this.clearText(this._textPass)}}>
                             <Image style={styles.deleteIcon} source={require('../assets/icon/icons8-effacer-24.png')} alt="menu" />
                         </TouchableHighlight>
                     </View>
+                    <Button buttonStyle={{borderColor:'white', borderWidth:0.5, borderRadius:60, width:200, marginLeft:90, marginTop:30}} type='outline' titleStyle={{color:'white'}} title='LOG IN' onPress={() => this._userLogin()}/>
                 </View>
-                <Button buttonStyle={{borderColor:'white', borderWidth:0.5, borderRadius:60, width:200, marginLeft:90, marginTop:30}} type='outline' titleStyle={{color:'white'}} title='LOG IN' onPress={() => this._userLogin()}/>
             </View>
         )
     }
 }
-
-
-
 export default Login
 
 const styles = StyleSheet.create({
     body: {
         flex: 1,
         backgroundColor:'#0E0B21',
+    },
+    paddingTitle:{
+        zIndex:1,
+        paddingTop:50,
+        alignItems: 'center',
+        flexDirection: 'row',
+        justifyContent: 'space-between',
     },
     form: {
         marginTop:100
@@ -108,6 +119,10 @@ const styles = StyleSheet.create({
         left:250,
         position: 'absolute',
         alignItems:'center',
+    },
+    Text: {
+        marginLeft:10,
+        color:'white'
     },
     deleteIcon: {
         width:15,

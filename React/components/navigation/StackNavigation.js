@@ -4,6 +4,7 @@ import Cart from "../Flatlist/Cart";
 import BrandCatalog from "../Flatlist/BrandCatalog";
 import CarsCatalog from "../Flatlist/CarsCatalog";
 import Homepage from "../Homepage";
+import Login from "../Login";
 
 
 const Stack = createStackNavigator();
@@ -16,6 +17,7 @@ function MyDrawer() {
                 }}>
                 <Stack.Screen name="Brand" component={BrandCatalog} />
                 <Stack.Screen name="Home" component={Homepage} />
+                <Stack.Screen name="Login" component={Login} />
                 <Stack.Screen name="Cars" component={CarsCatalog} />
                 <Stack.Screen name="Cart" component={Cart} />
             </Stack.Navigator>
