@@ -25,12 +25,12 @@ export default Homepage
 
 const styles = StyleSheet.create({
     body: {
-        flex: 1
+        flex: 1,
+        backgroundColor: 'black',
     },
     backgroundImage: {
         flex:1,
         position:'absolute',
-        // zIndex:0,
         resizeMode:'cover',
     },
     main_content: {
@@ -40,7 +40,6 @@ const styles = StyleSheet.create({
         zIndex:1
     },
     Text : {
-        // fontFamily: 'open-sans-bold',
          padding:10,
         fontSize: 30,
         color:'white',

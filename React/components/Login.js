@@ -97,7 +97,9 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
     },
     form: {
-        marginTop:100
+        marginTop:100,
+        justifyContent:'center',
+        alignItems: 'center',
     },
     case: {
         padding:15,
@@ -105,8 +107,8 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         borderBottomColor: 'white',
         borderBottomWidth: 0.5,
-        marginLeft: 50,
-        marginBottom: 30,
+        // marginLeft: 50,
+        // marginBottom: 30,
         width:280
     },
     inputText: {

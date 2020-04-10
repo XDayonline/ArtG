@@ -18,12 +18,6 @@ const styles = StyleSheet.create({
     body: {
         flex: 1
     },
-    main_content: {
-        marginTop:150,
-        justifyContent:'center',
-        alignItems: 'center',
-        zIndex:1
-    },
     Text : {
         // fontFamily: 'open-sans-bold',
         padding:10,
