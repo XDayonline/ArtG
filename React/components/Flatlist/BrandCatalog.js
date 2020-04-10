@@ -43,7 +43,7 @@ class BrandCatalog extends React.Component {
 
     render() {
         let {isLoaded, data} = this.state;
-
+BrandCatalog
         if (!isLoaded) {
             return (
                 <View style={styles.body}>

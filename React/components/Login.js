@@ -1,6 +1,6 @@
 import React from "react";
 import Header from "./Header";
-import {Image, StyleSheet, Text, View, TextInput, TouchableHighlight, TouchableOpacity, AsyncStorage} from "react-native";
+import {Image, StyleSheet, Text, View, TextInput, TouchableHighlight, Alert, AsyncStorage} from "react-native";
 import {Button} from "react-native-elements";
 import Homepage from "./Homepage";
 
@@ -11,70 +11,33 @@ class Login extends React.Component {
     constructor(props){
         super(props);
         this.state= {
-            email: "david@david.fr",
-            password: "testtest",
+            email: "",
+            password: "",
         }
     };
 
-    handleEmail = text => {
-        this.setState({email:text})
-    };
-
-    handlePassword = text => {
-        this.setState({password:text})
-    };
-
-    login= async (email, password) => {
-        if( email && password){
-            // this.setState({email,password});
-            this.authenticate(email,password);
-        }
-
-    };
-    authenticate = async () => {
+    _userLogin = async () => {
         const result = await fetch('https://artgback.herokuapp.com/api/login', {
+            method: 'POST',
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
             },
-            method: 'POST',
             body: JSON.stringify({
-                username: this.state.email,
-                password: this.state.password
+                email: this.state.email,
+                password: this.state.password,
             })
-        });
-
+        })
         const data = await result.json();
-        console.log(data)
-
-       // this.setState({loading: true, message: ""});
-       //  fetch.get('https://artgback.herokuapp.com/api/login',{
-       //     body:JSON.stringify({
-       //         username:this.state.email,
-       //         password:this.state.password,
-       //     }) })
-       //     .then(async res => {
-       //         console.log(res.json);
-       //         this.setState({loading: false, message: ""});
-       //          if(res.data.user === "Success") {
-       //              await AsyncStorage.setItem("email", this.state.email);
-       //              await AsyncStorage.setItem("password", this.state.password);
-       //              this.props.navigation.navigate("Home")
-       //          }
-       //          else{
-       //              this.setState({message : "This account not exist", loading:false})
-       //          }
-       //     })
-       //     .catch(err => {
-       //          this.setState({message:"Error connecting to server, Please try again", loading:false})
-       //  })
-
+        if(data.success === true){
+            Alert.alert( 'ok','you are connected')
+            await AsyncStorage.setItem("name",data.data.name)
+            await AsyncStorage.setItem("token", data.data.token)
+            this.props.navigation.navigate("Home")
+        }else{
+            Alert.alert( 'Error','not connected')
+        }
     };
-
-    // componentDidMount() {
-    //     this.login();
-    // }
-
     render() {
         return(
             <View style={styles.body}>
@@ -87,7 +50,7 @@ class Login extends React.Component {
                                    underlineColorAndroid = "transparent"
                                    placeholder = "Email"
                                    placeholderTextColor = "white"
-                                   onChangeText = {this.handleEmail}/>
+                                   onChangeText = {(text) => this.setState({email:text})}/>
                         <TouchableHighlight style={styles.clear} onPress={() => {this.clearText(this._textUSer)}}>
                             <Image style={styles.deleteIcon} source={require('../assets/icon/icons8-effacer-24.png')} alt="menu" />
                         </TouchableHighlight>
@@ -99,18 +62,15 @@ class Login extends React.Component {
                                    underlineColorAndroid = "transparent"
                                    placeholder = "Password"
                                    placeholderTextColor = 'white'
-                                   autoCapitalize = "none"
+                                   autoCapitalize = "none"s
                                    secureTextEntry={true}
-                                   onChangeText = {this.setState({password:text})}/>
+                                   onChangeText = {(text) => this.setState({password:text})}/>
                         <TouchableHighlight style={styles.clear} onPress={() => {this.clearText(this._textInput)}}>
                             <Image style={styles.deleteIcon} source={require('../assets/icon/icons8-effacer-24.png')} alt="menu" />
                         </TouchableHighlight>
                     </View>
                 </View>
-                    <TouchableOpacity>
-                        <Text style={styles.forgot}>Forgot Password?</Text>
-                        <Button buttonStyle={{borderColor:'white', borderWidth:0.5, borderRadius:60, width:200, marginLeft:90, marginTop:30}} type='outline' titleStyle={{color:'white'}} title='LOG IN' onPress={() => this.authenticate(this.state.email, this.state.password )}/>
-                    </TouchableOpacity>
+                <Button buttonStyle={{borderColor:'white', borderWidth:0.5, borderRadius:60, width:200, marginLeft:90, marginTop:30}} type='outline' titleStyle={{color:'white'}} title='LOG IN' onPress={() => this._userLogin()}/>
             </View>
         )
     }
