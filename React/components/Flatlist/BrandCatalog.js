@@ -42,14 +42,15 @@ class BrandCatalog extends React.Component {
 
     };
 
-    UNSAFE_componentWillReceiveProps(nextProps,nextContext) {
-        this.setState({
-            idBrand: nextProps.navigation.getParam("idBrand"),
-        });
-    }
+    // UNSAFE_componentWillReceiveProps(nextProps,nextContext) {
+    //     this.setState({
+    //         idBrand: nextProps.navigation.getParam("idBrand"),
+    //     });
+    // }
 
     _displayDetailBrand = (idBrand) => {
-        this.props.navigation.navigate("Cars", {idBrand: this.state.data.data[1].marque});
+        this.props.navigation.navigate("Cars", {idBrand: this.state.data.data[idBrand].id});
+        // this.props.navigation.navigate("Cars", {id: data.data.id});
     };
 
     render() {
@@ -71,7 +72,11 @@ class BrandCatalog extends React.Component {
                     <FlatList
                         data={this.state.data.data}
                         renderItem={
-                            ({item}) => <BrandItem
+                            ({item}) =>
+                                // <Button
+                                //     title="Details"
+                                //     onPress={()=> this.props.navigation.navigate('Cars', {id: item.id}) + console.log(item.id)}/>
+                                <BrandItem
                                 style={styles.item}
                                 brand={item}
                                 displayDetailBrand={this._displayDetailBrand}
