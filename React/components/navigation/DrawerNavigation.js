@@ -17,6 +17,7 @@ const Drawer = createDrawerNavigator();
 function MyDrawer() {
     return (
         <NavigationContainer>
+            <Drawer.Screen name="Back" component={StackNavigation}/>
             <Drawer.Navigator
             initialRouteName="Home"
             drawerPosition="right"
@@ -27,7 +28,6 @@ function MyDrawer() {
                 activeTintColor: '#e91e63',
                 drawerLabel: { color: 'white' },
             }}>
-                <Drawer.Screen name="Back" component={StackNavigation}/>
                 <Drawer.Screen name="Home" component={Homepage} options={{ drawerLabel: 'Home' , color:'white'}}/>
                 <Drawer.Screen name="Login" component={Login}/>
                 <Drawer.Screen name="Brand" component={BrandCatalog}/>
