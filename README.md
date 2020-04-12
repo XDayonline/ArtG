@@ -1,21 +1,29 @@
 # ArtG
 
-# Intro
+# Introduction
 We present you our project for the end of the 3rd year of Bachelor in Computer Science at Ynov Campus.
 This project is a luxury car rental application created in React Native and Laravel.
 
-# Backend and APi 
-Backend 
+![Login](screenshots/login.png "Login")
+![Home](screenshots/home.png "Home")
+![Menu](screenshots/menu.png "Menu")
+![Brands](screenshots/brands.png "Brands")
+![Cars](screenshots/cars.png "Cars")
 
-   https://artgback.herokuapp.com/
+# Back office and APi 
+Back-office : https://artgback.herokuapp.com/
    
-API
+API : https://artgback.herokuapp.com/api/
     
-   https://artgback.herokuapp.com/api/
-    
-# Maquette link
-    
-   https://xd.adobe.com/view/5f62c5f8-c15d-49b1-7692-52e816fe4ddf-2953/
+# Model
+
+![Login](screenshots/login.png "Login")
+![Home](screenshots/home.png "Home")
+![Menu](screenshots/menu.png "Menu")
+![Brands](screenshots/brands.png "Brands")
+![Cars](screenshots/cars.png "Cars")
+
+You can access to the full model here https://xd.adobe.com/view/5f62c5f8-c15d-49b1-7692-52e816fe4ddf-2953/
     
 # Install project
 Install npm:
