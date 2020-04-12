@@ -7,14 +7,15 @@ This project is a luxury car rental application created in React Native and Lara
 # Backend and APi 
 Backend 
 
-    https://artgback.herokuapp.com/
+   https://artgback.herokuapp.com/
+   
 API
     
-    https://artgback.herokuapp.com/api/
+   https://artgback.herokuapp.com/api/
     
 # Maquette link
     
-    https://xd.adobe.com/view/5f62c5f8-c15d-49b1-7692-52e816fe4ddf-2953/
+   https://xd.adobe.com/view/5f62c5f8-c15d-49b1-7692-52e816fe4ddf-2953/
     
 # Install project
 Install npm:
@@ -47,10 +48,10 @@ Install nodeJs :
 # Networking
 Opening on your website : 
    
-           http://localhost:19002/
+   http://localhost:19002/
 
 # Apk link
-`https://expo.io/artifacts/464f163d-1d35-44aa-b113-57ba0c11fe32`
+https://expo.io/artifacts/464f163d-1d35-44aa-b113-57ba0c11fe32
 
 # Authors
 list authors of project :   
