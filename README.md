@@ -1,24 +1,46 @@
 # ArtG
 
-#Installation du projet
-Installation d'expo :
+#Intro
+We present you our project for the end of the 3rd year of Bachelor in Computer Science at Ynov Campus.
+This project is a luxury car rental application created in React Native and Laravel.
 
-`npm install expo-cli --global `
+#Installation project
+Install npm:
 
 `npm install`
 
-Installation de nodeJs :
+Install xpo :
+
+`npm install expo-cli --global `
+
+
+
+Install nodeJs :
 
 `sudo apt install nodejs`
 
-Installer module Drawer navigation:
-`npm install @react-navigation/drawer
 
+#Stat project
+1. cd to repo
+2. Run build 
 
-#Démarrer le projet
+`npm start`
 
 `expo start`
 
-Lancer tunnel
+3. Start expo force tunnel
 
 `expo start --tunnel`
+
+#Networking
+Opening on your website : 
+
+`http://localhost:19002/`
+
+#Apk link
+`https://expo.io/artifacts/464f163d-1d35-44aa-b113-57ba0c11fe32`
+
+#Authors
+list authors of project :   
+- Voltzy9
+- XDayonline
