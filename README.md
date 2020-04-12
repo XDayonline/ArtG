@@ -1,10 +1,10 @@
 # ArtG
 
-#Intro
+# Intro
 We present you our project for the end of the 3rd year of Bachelor in Computer Science at Ynov Campus.
 This project is a luxury car rental application created in React Native and Laravel.
 
-#Installation project
+# Installation project
 Install npm:
 
 `npm install`
@@ -20,7 +20,7 @@ Install nodeJs :
 `sudo apt install nodejs`
 
 
-#Stat project
+# Start project
 1. cd to repo
 2. Run build 
 
@@ -32,15 +32,15 @@ Install nodeJs :
 
 `expo start --tunnel`
 
-#Networking
+# Networking
 Opening on your website : 
 
 `http://localhost:19002/`
 
-#Apk link
+# Apk link
 `https://expo.io/artifacts/464f163d-1d35-44aa-b113-57ba0c11fe32`
 
-#Authors
+# Authors
 list authors of project :   
 - Voltzy9
 - XDayonline
