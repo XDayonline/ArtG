@@ -11,7 +11,7 @@ Backend
 API
     
     https://artgback.herokuapp.com/api/
-# Installation project
+# Install project
 Install npm:
 
 `npm install`
