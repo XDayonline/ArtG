@@ -20,12 +20,7 @@ API : https://artgback.herokuapp.com/api/
     
 # Model
 
-![Login](screenshots/login.png "Login")
-![Home](screenshots/home.png "Home")
-![Menu](screenshots/menu.png "Menu")
-![Brands](screenshots/brands.png "Brands")
-![Cars](screenshots/cars2.png "Cars")
-![Cars](screenshots/cars.png "Cars")
+![Model](screenshots/model.png "Model")
 
 You can access to the full model here https://xd.adobe.com/view/5f62c5f8-c15d-49b1-7692-52e816fe4ddf-2953/
     
