@@ -69,8 +69,6 @@ https://expo.io/artifacts/464f163d-1d35-44aa-b113-57ba0c11fe32
 | [![FVCproductions](https://avatars0.githubusercontent.com/u/32893447?&s=200)](https://github.com/XDayonline)    |[![FVCproductions](https://avatars1.githubusercontent.com/u/32739409?&s=200)](https://github.com/Voltzy9) | [![FVCproductions](https://avatars1.githubusercontent.com/u/4284691?v=3&s=200)](http://fvcproductions.com)  |
 | <a href="http://github.com/fvcproductions" target="_blank">`https://github.com/XDayonline`</a> | <a href="http://github.com/fvcproductions" target="_blank">`https://github.com/Voltzy9`</a> 
 
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
-
 ## License
 
 [![License](http://img.shields.io/:license-mit-blue.svg?style=flat-square)](http://badges.mit-license.org)
