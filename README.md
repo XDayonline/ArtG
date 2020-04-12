@@ -24,18 +24,18 @@ Install nodeJs :
 1. cd to repo
 2. Run build 
 
-`npm start`
+    `npm start`
 
-`expo start`
+    `expo start`
 
 3. Start expo force tunnel
 
-`expo start --tunnel`
+    `expo start --tunnel`
 
 # Networking
 Opening on your website : 
-
-`http://localhost:19002/`
+   
+           http://localhost:19002/
 
 # Apk link
 `https://expo.io/artifacts/464f163d-1d35-44aa-b113-57ba0c11fe32`
