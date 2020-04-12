@@ -32,23 +32,19 @@ You can access to the full model here https://xd.adobe.com/view/5f62c5f8-c15d-49
 # Install 
 
 * Clone this repository
+* Install NodeJs :
 
-* Install dependencies:
-
-    `npm install`
-
+    `sudo apt install nodejs`
 * Install expo :
 
     `npm install expo-cli --global `
 
-* Install NodeJs :
-
-    `sudo apt install nodejs`
-
-
 # Start
 
 * cd to repo
+* Install dependencies:
+
+    `npm install`
 * Run build 
 
     ```npm start```
