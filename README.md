@@ -29,7 +29,7 @@ API : https://artgback.herokuapp.com/api/
 
 You can access to the full model here https://xd.adobe.com/view/5f62c5f8-c15d-49b1-7692-52e816fe4ddf-2953/
     
-# Install 
+# Requirements
 
 * Clone this repository
 * Install NodeJs :
@@ -39,7 +39,7 @@ You can access to the full model here https://xd.adobe.com/view/5f62c5f8-c15d-49
 
     `npm install expo-cli --global `
 
-# Start
+# How to launch the project
 
 * cd to repo
 * Install dependencies:
